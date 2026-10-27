@@ -5,7 +5,7 @@
 }
 
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1 class="text-primary fw-bold">Категории услуги</h1>
+    <h1 class="text-primary fw-bold"><i class="bi bi-grid-3x3-gap"></i> Категории услуги</h1>
     <a asp-action="Create" class="btn btn-success shadow-sm">
         <i class="bi bi-plus-circle"></i> Добави нова категория
     </a>
@@ -26,9 +26,15 @@
                     <tr>
                         <td class="fw-bold">@Html.DisplayFor(modelItem => item.Name)</td>
                         <td class="text-end pe-3">
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-warning me-1">Редактирай</a>
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info me-1">Детайли</a>
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Изтрий</a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-warning me-1">
+                                <i class="bi bi-pencil"></i> Редактирай
+                            </a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info me-1">
+                                <i class="bi bi-info-circle"></i> Детайли
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">
+                                <i class="bi bi-trash"></i> Изтрий
+                            </a>
                         </td>
                     </tr>
                 }

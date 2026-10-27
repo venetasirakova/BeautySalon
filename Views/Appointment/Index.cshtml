@@ -5,7 +5,7 @@
 }
 
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1 class="text-primary fw-bold">Запазени часове</h1>
+    <h1 class="text-primary fw-bold"><i class="bi bi-calendar-check"></i> Запазени часове</h1>
     <a asp-action="Create" class="btn btn-success shadow-sm">
         <i class="bi bi-calendar-plus"></i> Запази нов час
     </a>
@@ -16,10 +16,10 @@
         <table class="table table-hover align-middle mb-0">
             <thead class="table-dark">
                 <tr>
-                    <th>Име на клиент</th>
-                    <th>Телефон</th>
-                    <th>Дата и час</th>
-                    <th>Услуга</th>
+                    <th><i class="bi bi-person"></i> Име на клиент</th>
+                    <th><i class="bi bi-telephone"></i> Телефон</th>
+                    <th><i class="bi bi-clock"></i> Дата и час</th>
+                    <th><i class="bi bi-scissors"></i> Услуга</th>
                     <th class="text-end pe-4">Действия</th>
                 </tr>
             </thead>
@@ -31,7 +31,7 @@
                         <td>@Html.DisplayFor(modelItem => item.ClientPhone)</td>
                         <td>
                             <span class="badge bg-secondary">
-                                @item.DateTime.ToString("dd.MM.yyyy HH:mm") ч.
+                                <i class="bi bi-calendar3"></i> @item.DateTime.ToString("dd.MM.yyyy HH:mm") ч.
                             </span>
                         </td>
                         <td>
@@ -40,9 +40,15 @@
                             </span>
                         </td>
                         <td class="text-end pe-3">
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-warning me-1">Редактирай</a>
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info me-1">Детайли</a>
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Изтрий</a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-warning me-1">
+                                <i class="bi bi-pencil"></i> Редактирай
+                            </a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info me-1">
+                                <i class="bi bi-info-circle"></i> Детайли
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">
+                                <i class="bi bi-trash"></i> Изтрий
+                            </a>
                         </td>
                     </tr>
                 }
