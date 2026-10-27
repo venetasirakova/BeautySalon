@@ -1,36 +1,43 @@
-@model BeautySalon.Data.Models.Category
+﻿@model BeautySalon.Data.Models.Category
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Добави категория";
 }
 
-<h1>Create</h1>
-
-<h4>Category</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-primary text-white text-center py-3">
+                <h4 class="mb-0 fw-bold"><i class="bi bi-grid-3x3-gap"></i> Добави нова категория</h4>
             </div>
+            <div class="card-body p-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-            <div class="form-group">
-                <label asp-for="Services" class="control-label"></label>
-                <input asp-for="Services" class="form-control" />
-                <span asp-validation-for="Services" class="text-danger"></span>
+                    <div class="mb-4">
+                        <label asp-for="Name" class="form-label fw-bold">
+                            <i class="bi bi-folder"></i> Име на категорията
+                        </label>
+                        <input asp-for="Name" class="form-control" placeholder="Напр. Фризьорство, Маникюр..." />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-between pt-2">
+                        <a asp-action="Index" class="btn btn-outline-secondary">
+                            <i class="bi bi-arrow-left"></i> Назад
+                        </a>
+                        <button type="submit" class="btn btn-success px-4">
+                            <i class="bi bi-check-circle"></i> Запази
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
