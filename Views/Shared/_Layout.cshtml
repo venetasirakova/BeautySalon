@@ -56,9 +56,17 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - BeautySalon - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="border-top footer text-muted bg-white py-3 mt-5 shadow-sm">
+        <div class="container text-center text-md-between d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+            <div>
+                <span class="fw-bold text-primary"><i class="bi bi-scissors"></i> Beauty Salon</span> &copy; @DateTime.Now.Year - Всички права са запазени.
+            </div>
+            <div>
+                <span class="me-3"><i class="bi bi-clock"></i> Пон - Съб: 09:00 - 19:00</span>
+                <a asp-controller="Home" asp-action="Privacy" class="text-decoration-none text-muted">
+                    <i class="bi bi-shield-check"></i> Поверителност
+                </a>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
