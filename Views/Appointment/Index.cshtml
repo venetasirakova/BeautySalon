@@ -27,11 +27,11 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td class="fw-bold">@Html.DisplayFor(modelItem => item.CustomerName)</td>
-                        <td>@Html.DisplayFor(modelItem => item.CustomerPhone)</td>
+                        <td class="fw-bold">@Html.DisplayFor(modelItem => item.ClientName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ClientPhone)</td>
                         <td>
                             <span class="badge bg-secondary">
-                                @item.AppointmentDate.ToString("dd.MM.yyyy HH:mm") ч.
+                                @item.DateTime.ToString("dd.MM.yyyy HH:mm") ч.
                             </span>
                         </td>
                         <td>
